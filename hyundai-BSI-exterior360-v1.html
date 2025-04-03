@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<head>
+<html lang="en" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Ease 360 - 360-imagesets - animated angles</title>
+  <link rel='stylesheet' href='./ease360.css'><link rel="stylesheet" href="./style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <style type="text/css">
+
+  	html, body {
+  		background-color: #343434;
+  	}
+
+    #container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+
+    #details {
+      color: #ddd;
+      align-self: center;
+      margin:20px; 
+    }
+
+    .btn-primary {
+      margin-top: 5px;
+    }
+
+  	#myEase360 {
+      width: 100vw;
+      max-width: 1440px;
+      position: relative;
+      height: calc(100vw * (722/1440));
+      max-height: calc(1440px * (722/1440));
+      align-self: center;
+    	background-color: #343434;
+    }
+
+    #loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      pointer-events: none;
+
+    }
+
+    #instructional {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      opacity: 1;
+      pointer-events: none;
+      margin: 20px 0;
+      transition: opacity 0.25s linear;
+    }
+
+    #instructional .copy {
+      margin-top: 10px;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    .selections {
+      margin-top: 20px;
+      width: 100vw;
+      max-width: 1440px;
+      align-self: center; 
+      display: flex;
+      justify-content: center;
+      column-gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    svg {
+      display: block;
+      max-width: 100%;
+      pointer-events: none;
+      width: 1em;
+      height: 1em;
+      
+    }
+
+    .icon-360 {
+      width: 120px;
+      height: 46px;
+      fill: #fff;
+    }
+
+
+    .transition-25 {
+      transition: opacity 0.25s linear;
+    }
+    
+
+    .opacity-0 {
+      opacity: 0.0 !important;
+    }
+
+    .opacity-1 {
+      opacity: 1.0 !important;
+    }
+
+
+   @media (width < 1440px)   {
+		  #myEase360 {
+	    	 width: 100vw;
+         height: calc(100vw * (534/1024));
+
+	    }
+
+    @media ( width < 1024px )  {
+      #myEase360 {
+        width: 100vw;
+        height: calc(100vw * (360/640));
+
+      }
+
+    @media (width < 640px)   {
+      #myEase360 { 
+        width: 100vw;
+        height: calc(100vw * (300/575));
+      }
+
+
+    @media (width < 534px) {
+      #myEase360 {
+        width: 100vw;
+        height: calc(100vw * 200/534));
+      }
+
+
+	}
+
+  </style>
+
+  <script type="text/javascript" src="./jquery.min.js"></script>
+  <script type="text/javascript" src="./ease360-0.2.75.min.js"></script> 
+  <script  src="./hyundai-BSI-exterior360-v1.js"></script>
+
+</head>
+
+<body >
+
+<div id="container">
+
+  <div id="myEase360">
+      <div id="loading" class="transition-25">
+        <img src="./ui/loader-360-v1.gif" width=70 height=70>
+      </div>
+ 
+  </div>
+  <div id="instructional" class="transition-25">
+    <div >
+     <svg viewBox="0 0 97 38" aria-hidden="true" class="icon icon-360"><path d="M48.0001 0c-23.5942862 0-48 5.29456513-48 14.1573831 0 7.3576199 16.3198377 11.6764433 31.1365058 13.2790128l-8.8303609 8.1873045 1.3794269 1.4849126 11.2119009-10.3943877L24.5011565 15.504353l-1.486941 1.3773983 7.8667906 8.4834756C11.9422858 23.2839151 2.02866901 18.2429211 2.02866901 14.1573831c0-5.85850727 18.47214949-12.12881409 45.97143099-12.12881409 27.4992815 0 45.971431 6.27030682 45.971431 12.12881409 0 4.5642803-11.3214437 9.1163892-27.5297101 11.0678726l.2413997 2.0123404C80.8548037 25.5315696 96.0001 21.1985462 96.0001 14.1573831 96.0001 5.29456513 71.5943862 0 48.0001 0"></path>
+     </svg>
+    </div>
+  </div>  
+
+  <div class="selections" > 
+    <button  type="button" class="btn btn-primary" data-color="gray" data-type="color" >Choose Amazon Gray Pearl</button>
+    <button  type="button" class="btn btn-primary" data-color="red" data-type="color" >Choose Ultimate Red</button>
+    <button  type="button" class="btn btn-primary" data-color="white" data-type="color" >Choose Creamy White Pearl</button>
+  </div>
+
+  <div class="selections" > 
+    <button  type="button" class="btn btn-primary" data-angle="0"   data-type="angle">Angle 0</button>
+    <button  type="button" class="btn btn-primary" data-angle="90"  data-type="angle">Angle 90</button>
+    <button  type="button" class="btn btn-primary" data-angle="120" data-type="angle">Angle 120</button>
+    <button  type="button" class="btn btn-primary" data-angle="180" data-type="angle">Angle 180</button>
+    <button  type="button" class="btn btn-primary" data-angle="270" data-type="angle">Angle 270</button>
+    <button  type="button" class="btn btn-primary" data-angle="300" data-type="angle">Angle 300</button>
+  </div>
+
+</body>
+
+</html>
