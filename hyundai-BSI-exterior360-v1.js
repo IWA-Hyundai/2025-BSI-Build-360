@@ -266,12 +266,9 @@ $(function() {
     }
 
 
-
-
     var pageInitiate = false;
 
     window.addEventListener("resize", (event) => { resize(); });
-
 
       function resize() {
 
@@ -307,7 +304,6 @@ $(function() {
          // if the imageset is not active and we are not initializing on page load....
          if ( ! imageSetsLoadedStatus[activeBreakpoint] && pageInitiate) {
 
-            alert(imageSetsLoadedStatus[activeBreakpoint] ); 
             //reset the breakpoints settings - 
             for (let key in colorLoadedStatus) {
               colorLoadedStatus[key] = false;
