@@ -313,8 +313,11 @@ $(function() {
               imageSetsLoadedStatus[key] = false;
             }
 
-            imageSetsLoadedStatus[activeBreakpoint] = "active";
-        }
+           
+        } 
+
+        imageSetsLoadedStatus[activeBreakpoint] = "active";
+        console.dir(imageSetsLoadedStatus)
 
       }
 
